@@ -5,11 +5,11 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-red)
 ![License](https://img.shields.io/badge/License-Research-green)
 
-Predicting demographic attributes from social media text is a challenging NLP task because individual posts contain limited stylistic signals.
+Predicting demographic attributes from social media text is a challenging NLP task because individual posts often contain limited stylistic information.
 
-This project investigates whether **aggregating multiple tweets into sessions improves age prediction performance** compared to single tweets.
+This project investigates whether **aggregating multiple tweets into sessions improves age prediction performance** compared to single tweet classification.
 
-We evaluate several classical machine learning and transformer-based models using the **PAN Author Profiling dataset**.
+Several classical machine learning and transformer-based models are evaluated using the **PAN Author Profiling dataset**.
 
 ---
 
@@ -24,15 +24,15 @@ Two input representations are studied:
 * **Single Tweet**
 * **Tweet Session (multiple tweets concatenated)**
 
-The hypothesis is that **sessions capture richer stylistic and lexical signals**.
+The hypothesis is that **sessions capture richer stylistic and lexical signals**, enabling models to better infer demographic attributes.
 
 ---
 
 # Dataset
 
-The project uses the **PAN Author Profiling dataset**, a benchmark dataset for demographic inference.
+This project uses the **PAN Author Profiling dataset**, a benchmark dataset for demographic inference research.
 
-Each author contains approximately **100 tweets** with age labels.
+Each author contains approximately **100 tweets** along with demographic labels.
 
 ### Age Groups
 
@@ -59,18 +59,18 @@ good morning everyone!
 
 ## Tweet Session
 
-Five tweets from the same author are aggregated.
+Five tweets from the same author are aggregated to form a session.
 
 ```
 tweet1 [SEP] tweet2 [SEP] tweet3 [SEP] tweet4 [SEP] tweet5
 ```
 
-This provides stronger signals for:
+This representation provides stronger signals for:
 
-* vocabulary patterns
-* punctuation style
+* vocabulary usage
+* punctuation patterns
 * emoji usage
-* code mixing
+* stylistic writing behavior
 
 ---
 
@@ -102,7 +102,7 @@ This provides stronger signals for:
 
 ![Model Comparison](figures/model_comparison.png)
 
-The chart above shows that **session-based modeling significantly improves performance** compared to single tweets.
+The chart above shows that **session-based modeling significantly improves performance** compared to single tweet classification.
 
 ---
 
@@ -110,7 +110,7 @@ The chart above shows that **session-based modeling significantly improves perfo
 
 ![Confusion Matrix](figures/bert_session_confusion_matrix.png)
 
-The confusion matrix illustrates prediction performance of the **fine-tuned BERT session model**.
+The confusion matrix illustrates the performance of the **fine-tuned BERT session model**, which achieved the best results in our experiments.
 
 ---
 
@@ -118,9 +118,9 @@ The confusion matrix illustrates prediction performance of the **fine-tuned BERT
 
 1. Aggregating tweets into sessions significantly improves age prediction performance.
 
-2. Frozen transformer embeddings are not sufficient for this task.
+2. Frozen transformer embeddings perform worse than classical lexical models.
 
-3. Fine-tuned BERT models outperform classical approaches.
+3. Fine-tuned BERT models achieve the best results.
 
 4. Session aggregation allows models to capture **stylistic signals across multiple tweets**.
 
@@ -140,7 +140,7 @@ results/
 
 figures/
    model_comparison.png
-   bert_confusion_matrix.png
+   bert_session_confusion_matrix.png
 
 src/
    models/
@@ -167,7 +167,7 @@ README.md
 Clone the repository:
 
 ```
-git clone https://github.com/yourusername/session-age-profiling.git
+git clone https://github.com/MdZakiAfzal/session-age-profiling.git
 cd session-age-profiling
 ```
 
@@ -191,8 +191,8 @@ This script runs:
 
 * TF-IDF baseline models
 * BERT embedding baseline
-* BERT fine-tuning (tweets)
-* BERT fine-tuning (sessions)
+* BERT fine-tuning on single tweets
+* BERT fine-tuning on tweet sessions
 
 ---
 
@@ -207,7 +207,7 @@ notebooks/bert_experiments.ipynb
 It includes:
 
 * dataset preparation
-* BERT training
+* model training
 * evaluation
 * confusion matrix visualization
 
@@ -215,7 +215,7 @@ It includes:
 
 # Reproducibility
 
-All experiments can be reproduced using the scripts in `src/`.
+All experiments are reproducible using the scripts inside `src/`.
 
 Key features:
 
@@ -227,7 +227,7 @@ Key features:
 
 # Future Work
 
-Possible extensions of this research include:
+Potential extensions of this research include:
 
 * incorporating user metadata
 * experimenting with larger transformer architectures
