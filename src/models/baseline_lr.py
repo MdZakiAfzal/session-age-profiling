@@ -41,7 +41,7 @@ def run_experiment(csv_path, text_column):
 
 
 print("Running tweet experiment...")
-run_experiment("data/processed/tweets.csv", "tweet_text")
+run_experiment("data/processed/tweets.csv", "text")
 
 print("\nRunning session experiment...")
-run_experiment("data/processed/sessions.csv", "session_text")
+run_experiment("data/processed/sessions.csv", "text")

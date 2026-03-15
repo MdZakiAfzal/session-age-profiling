@@ -48,4 +48,4 @@ def run_experiment(csv_path):
 
 if __name__ == "__main__":
 
-    run_experiment("../../data/processed/bert_sessions.csv")
+    run_experiment("../../data/processed/sessions.csv")

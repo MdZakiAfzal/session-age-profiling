@@ -12,7 +12,7 @@ truth_file = "data/raw/pan15/truth.txt"
 authors = load_authors(dataset_path)
 labels = load_labels(truth_file)
 
-sessions, session_labels = build_sessions(authors, labels)
+sessions, session_labels = build_sessions(authors, labels, session_size=5)
 
 print("Total sessions:", len(sessions))
 print("Example:", sessions[0])
@@ -25,7 +25,7 @@ df = pd.DataFrame({
     "age_label": session_labels
 })
 
-output_path = "data/processed/sessions.csv"
+output_path = "data/processed/sessions_5.csv"
 
 df.to_csv(output_path, index=False)
 

@@ -24,12 +24,12 @@ def main():
 
     # 3️⃣ BERT fine-tuning (tweet model)
     run_command(
-        "python src/models/bert_finetune.py --dataset data/processed/bert_tweets.csv"
+        "python src/models/bert_finetune.py --dataset data/processed/tweets.csv"
     )
 
     # 4️⃣ BERT fine-tuning (session model)
     run_command(
-        "python src/models/bert_finetune.py --dataset data/processed/bert_sessions.csv"
+        "python src/models/bert_finetune.py --dataset data/processed/sessions.csv"
     )
 
     print("\nAll experiments completed!")
