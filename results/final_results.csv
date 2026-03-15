@@ -1,0 +1,6 @@
+model,input,accuracy,macro_f1
+tfidf_lr,tweet,0.64,0.57
+tfidf_lr,session,0.78,0.73
+bert_embeddings,session,0.67,0.60
+bert_finetune,tweet,0.716,0.648
+bert_finetune,session,0.860,0.825

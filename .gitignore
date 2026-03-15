@@ -18,5 +18,5 @@ venv/
 .DS_Store
 
 # experiment outputs
-results/
+
 data/raw/
