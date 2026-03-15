@@ -86,7 +86,7 @@ This representation provides stronger signals for:
 
 ---
 
-# Results
+# Main Results
 
 | Model                | Input   | Accuracy | Macro F1 |
 | -------------------- | ------- | -------- | -------- |
@@ -98,11 +98,25 @@ This representation provides stronger signals for:
 
 ---
 
-# Model Performance
+# Session Size Ablation
 
-![Model Comparison](figures/model_comparison.png)
+To analyze the effect of contextual aggregation, we conducted an ablation study by varying the number of tweets per session.
 
-The chart above shows that **session-based modeling significantly improves performance** compared to single tweet classification.
+| Session Size | Accuracy  | Macro F1  |
+| ------------ | --------- | --------- |
+| 3 Tweets     | 0.809     | 0.743     |
+| 5 Tweets     | 0.860     | **0.825** |
+| 10 Tweets    | **0.880** | 0.814     |
+
+These results show that **increasing session size improves prediction accuracy**, as more tweets provide richer stylistic context. However, performance gains diminish beyond a certain session length.
+
+---
+
+# Ablation Visualization
+
+![Session Ablation](figures/session_ablation_plot.png)
+
+The figure shows that performance improves significantly when moving from 3 tweets to 5 tweets per session, while further increases provide smaller gains.
 
 ---
 
@@ -110,7 +124,9 @@ The chart above shows that **session-based modeling significantly improves perfo
 
 ![Confusion Matrix](figures/bert_session_confusion_matrix.png)
 
-The confusion matrix illustrates the performance of the **fine-tuned BERT session model**, which achieved the best results in our experiments.
+The confusion matrix illustrates the performance of the **fine-tuned BERT session model**, which achieved the best results.
+
+Most misclassifications occur between **adjacent age groups**, suggesting overlapping linguistic patterns between neighboring demographics.
 
 ---
 
@@ -118,11 +134,11 @@ The confusion matrix illustrates the performance of the **fine-tuned BERT sessio
 
 1. Aggregating tweets into sessions significantly improves age prediction performance.
 
-2. Frozen transformer embeddings perform worse than classical lexical models.
+2. Fine-tuned BERT models outperform classical lexical approaches.
 
-3. Fine-tuned BERT models achieve the best results.
+3. Frozen transformer embeddings perform worse than TF-IDF baselines.
 
-4. Session aggregation allows models to capture **stylistic signals across multiple tweets**.
+4. Increasing session size improves performance but shows diminishing returns.
 
 ---
 
@@ -135,12 +151,17 @@ data/
    raw/
    processed/
 
+experiments/
+   (stores experiment logs and additional runs)
+
 results/
    final_results.csv
+   session_ablation_results.csv
 
 figures/
    model_comparison.png
    bert_session_confusion_matrix.png
+   session_ablation_plot.png
 
 src/
    models/
@@ -209,7 +230,7 @@ It includes:
 * dataset preparation
 * model training
 * evaluation
-* confusion matrix visualization
+* visualization of results
 
 ---
 
