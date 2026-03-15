@@ -108,7 +108,7 @@ The chart above shows that **session-based modeling significantly improves perfo
 
 # Confusion Matrix (Best Model)
 
-![Confusion Matrix](figures/bert_confusion_matrix.png)
+![Confusion Matrix](figures/bert_session_confusion_matrix.png)
 
 The confusion matrix illustrates prediction performance of the **fine-tuned BERT session model**.
 
@@ -254,5 +254,4 @@ If you use this work, please cite:
 # Author
 
 **Md Zaki Afzal**
-
 Machine Learning Engineer

@@ -19,5 +19,4 @@ venv/
 
 # experiment outputs
 results/
-
-data/
+data/raw/
