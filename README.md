@@ -274,5 +274,5 @@ If you use this work, please cite:
 
 # Author
 
-**Md Zaki Afzal**\n
+**Md Zaki Afzal**
 Machine Learning Engineer
