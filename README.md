@@ -1,4 +1,4 @@
-# Beyond Single Posts: Improving Age Prediction with Session-Level Modeling of Social Media Text
+# Beyond Single Posts: Session-Level Modeling for Document-Level Text Analysis in Social Media
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue)
 ![Transformers](https://img.shields.io/badge/HuggingFace-Transformers-yellow)
@@ -238,9 +238,9 @@ To reproduce results:
 ```
 @misc{session_age_profiling,
   title={Beyond Single Posts: Improving Age Prediction with Session-Level Modeling of Social Media Text},
-  author={Md Zaki Afzal},
+  author={Anonymous Authors},
   year={2026},
-  url={https://github.com/MdZakiAfzal/session-age-profiling}
+  note={Under review at NLP 2026}
 }
 ```
 
