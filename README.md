@@ -245,8 +245,3 @@ To reproduce results:
 ```
 
 ---
-
-## 👤 Author
-
-**Md Zaki Afzal**
-Machine Learning Engineer
